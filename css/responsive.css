@@ -1,0 +1,183 @@
+@media screen and (max-width: 720px){
+	
+
+	.navbar{
+	height: auto;
+	}
+	.navbar-brand {
+	width: 30%;
+	}
+	.navbar-brand img{
+	padding: 5px;
+	border-radius: 3PX;
+	margin: 0;
+	margin-top: 5PX;
+	width: 80%;
+	margin-left: 20PX;
+	}
+
+	.carousel-indicators li {
+    display: none;
+	}
+	.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #F7EE00;
+	}
+
+	.about-us-left{
+	float: left;
+	width: 100%;
+	}
+
+	#about-us{
+	
+	padding: 50px 0;
+	}
+	.about-us h2{
+	font-size: 25px;
+	margin-bottom: 20px;
+
+	}
+	.about-us p{
+	font-size: 16px;
+	}
+
+	#work h2{
+
+	font-size: 25px;
+	margin-bottom: 30px;
+	}
+	.work p{
+		font-size: 18px;	
+	}
+	.work ul li i{
+		margin-top: 12px;
+		
+	}
+
+	.private-left{
+	width: 100%;
+	padding: 20px 20px 30px 20px;
+	}
+	.private-left ul li i{
+		margin-top: 12px;
+	}
+	.private-right{
+		width: 100%;
+		background:linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.1)),url(../image/parviate.jpeg)   center fixed ;
+	}
+
+	.product{
+	float: left;
+	width: 100%;
+	padding: 10px 20px;
+	}
+	.product-left{
+		margin-bottom: 20px;
+		float: left;
+		width: 100%;
+	}
+	.package h2{
+	text-align: center;
+	font-family: 'Acme', sans-serif;
+	margin-bottom: 30px;
+	}
+
+	#country h1{
+	font-size: 40px;
+	padding-top: 180px;
+	}
+	.select-country h2{
+	margin-top: 50px;
+	}
+	.country-nav{
+	margin-top: 20px;
+	margin-left: 0px;
+	margin-bottom: 30px;
+
+	}
+	.country-nav ul li{
+	margin-left: 10px;
+	font-size:16px;
+	}
+	.information{
+	margin: 100px 50px 100px 0;
+	box-shadow: 0 5px 10px 0 rgba(0,0,0,0.3);
+	padding: 10px 50px 50px;
+	}
+	.information h1{
+	margin-top: 30px;
+	font-size: 20px;
+	margin-bottom: 20px;
+	}
+	.input-box h6{
+	font-size: 16px;
+	}
+	.form{
+	padding: 20px 0;
+	}
+	.input-box input{
+	font-size: 10px;
+	padding: 15px 0px 20px 35px;
+	height: 33px;
+
+	}
+	.fa-plane-arrival{
+		margin-top: 20px;
+	}
+	.fa-plane-departure{
+		margin-top: 5px;
+	}
+	.input-box select{
+	background: #fff;
+	width: 100%;
+	border: none;
+	border: 1px #adadad solid;
+	margin-bottom: 30px;
+	font-size: 10px;
+	padding: 5px 0px 10px 22px;
+	height: 33px;
+
+	}
+	#faq{
+	float: left;
+	width: 100%;
+	padding: 0 0 0px;
+	}
+	.container-fluid{
+		width: 100%;
+		margin: 0 auto;
+	}
+	#faq h2{
+	color: #ea2c62;
+	font-size: 30px;
+	margin-bottom: 15px;
+	}
+	#page-title{
+
+	padding: 100px 0;
+	}
+	#page-title h2{
+	font-size: 30px;
+	}
+	.accordion .icon{
+	margin: 0 10px 0 0;
+	
+
+	}
+	.icon i{
+	width: 30px;
+	height: 30px;
+	margin-top: 5px;
+	font-size: 10px;
+	border-radius: 30%;
+
+	}
+	.accordion h5{
+	font-size: 14px;
+	margin: 0;
+	padding: 5px;
+	font-weight: normal;
+	color: #1f5c9a;
+	}
+
+}

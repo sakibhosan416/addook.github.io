@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Le's Bookstore</title>
+
+	<!--favicon-->
+    <link rel="shortcut icon" href="image/favecon.png" />	
+        
+    <!--font-awesome css-->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    
+    <!--main css-->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/animate.css" rel="stylesheet" type="text/css" />	
+    <link href="css/responsive.css" rel="stylesheet" type="text/css" />	
+     <!-- Font awesome -->
+	<script src="https://kit.fontawesome.com/6ff322857f.js" crossorigin="anonymous"></script>
+
+    <!-- data table -->
+	<link th:href="@{/css/jquery.dataTables.min.css}" rel="stylesheet" />
+	<link th:href="@{/css/dataTables.bootstrap.min.css}" rel="stylesheet" />
+	<script src="https://js.stripe.com/v2/"></script>
+	<script src="https://js.stripe.com/v3/"></script>
+	<link th:href="@{css/font-awesome.min.css}" rel="stylesheet" />
+      
+    <!--google font-->
+  	<link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+
+
+    <!--responsiv menu-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui, user-scalable=no">
+    <link href="stylesheets/reset.css" rel="stylesheet" type="text/css">
+    <link href="stylesheets/ma5-mobile-menu.css" rel="stylesheet" type="text/css">
+    <link href="stylesheets/site.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+
+<!-- *******navbar-part-start****** -->
+<section id="menu">
+	<nav class="navbar navbar-inverse">
+	  <div class="container">
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="#"><img src="image/logo4.png"></a>
+		    </div>
+		    <div class="collapse navbar-collapse" id="myNavbar">
+		      <ul class="nav navbar-nav">
+		        <li class="active"><a href="#">Voir les annonces</a></li>
+		        <li><a href="#">Passer une annonce</a></li>
+		        <li><a href="#">Mon compte</a></li>
+		        <li><a href="#">Connexion</a></li>
+		        <li><a href="#">Déconnexion</a></li>
+		      </ul>
+		    </div>
+	  </div><!-- end container -->
+	</nav>
+</section>	
+<!-- *******navbar-part-end****** -->
+
+<section id="page-title">
+	<div class="container">
+		<h2>Questions fréquemment posées</h2>
+	</div>
+</section>
+
+<section id="faq">
+	<div class="container-fluid">
+		<h2>FAQ</h2>
+		<div class="accordion">
+			<div class="icon"><i class="fas fa-plus"></i></div>
+
+				<h5> 1-Que doit faire expéditeur?</h5>
+		</div><!-- end accordion -->
+		<div class="panel">
+			<p>L’expéditeur a la responsabilité de la qualité de l’emballage du colis.
+			L’expéditeur doit renseigner les informations exactes d’identité et  de coordonnées du receveur du colis. Il doit également transmettre le code secret à 4 chiffres au receveur afin qu’il le donne au transporteur après reception du colis.
+			L’expéditeur doit aussi prévenir le receveur sur le contenu exact de l’envoi.
+
+			Que doit faire receveur du colis?
+			Il est fortement décoseillé au receveur de mandaté quelqu'un d'autre pour venir récupérer le colis à sa place.Le receveur doit vérifier sur place devant le transporteur  que le colis est complet conformément aux informations qu’il a préalablement reçu de l’expéditeur.
+			Si le colis est complet il remet le code secret au transporteur. Le code secret vaut « accusé de réception » et permettra au transporteur d’être payé par coshipping.fr pour le service rendu.</p>
+		</div>	
+
+		<div class="accordion">
+			<div class="icon"><i class="fas fa-plus"></i></div>
+				<h5>2-Qu’est-ce qu’un transporteur doit faire ? </h5>
+			
+		</div><!-- end accordion -->
+		<div class="panel">
+			<p>Un transporteur dépose une annonce sur coshipping.fr il est guidé par un formulaire simple et il propose un tarif pour son service.</p>
+		</div>	
+
+		<div class="accordion">
+			<div class="icon"><i class="fas fa-plus"></i></div>
+				<h5>3-Comment confirmer que le bagage est bien livré en tant que transporteur ?</h5>
+			
+		</div><!-- end accordion -->
+		<div class="panel">
+			<p>Pour confirmer que le bagage est bien livré je dois renvoyer à contact@coshipping.fr le code secret à 4 chiffres reçu du receveur.</p><p>
+			En tant que transporteur quelle est ma responsabilité ?
+			Je dois remettre le colis dans l’état dans lequel je l’ai reçu. Je dois proposer des trajets que je fais moi-même réellement.
+			Je ne dois  confier le colis ou le bagage à quelqu’un d’autre à aucun moment.</p>
+		</div>	
+
+		<div class="accordion">
+			<div class="icon"><i class="fas fa-plus"></i></div>
+				<h5> 4-En tant que transporteur quelle est ma responsabilité ?</h5>
+			
+		</div><!-- end accordion -->
+		<div class="panel">
+			<p>En tant que transporteur quelle est ma responsabilité ?
+			Je dois remettre le colis dans l’état dans lequel je l’ai reçu. Je dois proposer des trajets que je fais moi-même réellement.
+			Je ne dois  confier le colis ou le bagage à quelqu’un d’autre à aucun moment.</p>
+		</div>	
+
+		<div class="accordion">
+			<div class="icon"><i class="fas fa-plus"></i></div>
+				<h5> 5-Comment serai-je payé(e) pour le transport de colis ? </h5>
+			
+		</div><!-- end accordion -->
+		<div class="panel">
+			<p>Nous n'autorisons pas le paiement de la main à la main lors de la livraison : les paiements se font exclusivement en ligne de manière sécurisée et en amont du déplacement. 
+			A l'issue du déplacement, dès que la livraison est confirmée, vous serez payé(e) par coshipping sous forme de virement bancaire.
+			NB : Si votre receveur ne peut vous donner de code, pas de panique, demandez à l'expéditeur de confirmer via email hello@coshipping.fr, nous vous aiderons. </p>
+		</div>	
+
+		<div class="accordion">
+			<div class="icon"><i class="fas fa-plus"></i></div>
+				<h5>6-Que doit faire le receveur du bagage ou du colis ?</h5>
+			
+		</div><!-- end accordion -->
+		<div class="panel">
+			<p> Le receveur du colis dois montrer sa carte d’identé au porteur du colis et 
+			Si vous êtes celui qui a envoyé le bagage ou le colis, vous avez reçu un code à 4 chiffres. Il suffit de remettre ce code à votre transporteur afin qu'il puisse confirmer la livraison.
+			Attention, le code n'est à transmettre qu'une fois la livraison effectuée.</p>
+		</div>	
+
+		<div class="accordion">
+			<div class="icon"><i class="fas fa-plus"></i></div>
+				<h5> 7-Comment puis-je être sûr que je ne transporterai pas quelque chose d'illégal?</h5>
+			
+		</div><!-- end accordion -->
+		<div class="panel">
+			<p>Selon la loi, vous êtes le seul responsable des objets en votre possession, qu'ils vous appartiennent ou qu'ils appartiennent à un tiers. 
+			De ce fait, lorsque l'expéditeur vous remet le bien à acheminer, vous avez le droit de demander à vérifier le contenu de l'envoi en présence de l'expéditeur afin de vous assurer que les biens qui vous sont confiés ne sont pas des biens illicites ou dont le transport est interdit. 
+			Nous vous incitons donc fortement à faire cette démarche et à refuser l'acheminement si vous avez le moindre doute. 
+			Par ailleurs, vérifier le contenu du colis vous permet également d'attester de l'état du bien avant l'acheminement et de pouvoir contester ultérieurement tout dommage qui pourrait vous être injustement reproché. N'hésitez pas à prendre une photo du bien avant de voyager, cela pourra vous tenir lieu de preuve.
+			Enfin, vous êtes tenu de vous informer et de respecter les lois et réglementations en question, notamment les réglementations douanières. En effet, les réglementations imposent dans la plupart des cas des limites sur les quantités de marchandises qu’un particulier est autorisé à acheminer sans avoir à s’acquitter de taxes douanières.</p>
+		</div>	
+
+		<div class="accordion">
+			<div class="icon"><i class="fas fa-plus"></i></div>
+				<h5>8-Que se passe-t-il si un porteur annule sa proposition ou ne répond plus ?</h5>
+			
+		</div><!-- end accordion -->
+		<div class="panel">
+			<p>En cas d'annulation du transporteur, nous conservons votre paiement jusqu'à ce que vous vous mettiez d'accord avec un autre porteur.</p>
+		</div>															
+
+
+	</div><!-- end container -->
+</section><!-- end faq -->
+
+
+
+<!-- *******footer-part-end****** -->
+<section id="footer">
+	<div class="container">
+		<div class="footer">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="footer-left">
+						<a href=""><img src="image/logo4.png"></a>
+						<a href="https://github.com/twbs/bootstrap" target="_blank">Conditions Générales d'Utilisation (CGU)</a>
+						<a href="https://twitter.com/getbootstrap" target="_blank">Foire Aux Questions (FAQ)</a>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="footer-center">
+						<li><a href="tel:+880248956492"><i class="fas fa-phone-alt"></i>+88 02 48956492</a></li>
+						<li><a href="#"><i class="fas fa-envelope"></i>E-mail : hello@coshipping.fr</a></li>
+						<a href="https://twitter.com/mdo" target="_blank"><i class="fab fa-twitter-square"></i></a>
+						<a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="footer-right">
+						<p>coshipping est le N° 1 de la plateforme collaborative de livraison de colis par particuliers par voie maritime. Nous sommes présents sur facebook 	 <a href="https://twitter.com/mdo" rel="noopener" target="_blank">@mdo</a> et sur twitter <a href="https://twitter.com/fat" rel="noopener" target="_blank">@fat</a>. Maintained by the <a href="https://github.com/orgs/twbs/people">core team</a> with the help of <a href="https://github.com/twbs/bootstrap/graphs/contributors">our contributors</a>.</p>
+					</div>
+				</div>
+			</div><!-- end row -->
+			<div class="footer-bootom">
+				<p>© 2020 - Tous droits réservés</p>
+				<p><a href="https://www.fiverr.com/sakibhosan?up_rollout=true" target="_blank"><i class="fa fa-code pad" aria-hidden="true"></i>Made with by <span>"Sakib Hosan"</span></a></p>
+			</div>
+		</div>
+	</div><!-- end container -->
+</section>
+<!-- *******footer-part-end****** -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--bootstrap-->
+    <script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="js/script.js"></script>
+    <!-- mixitup pluging -->
+	<script src="js/mixitup.min.js"></script>
+    <script type="text/javascript">
+    	var mixer = mixitup('.gallery');
+
+    </script>
+    <script src="js/app.js"></script>
+
+
+     <!-- Bootstrap core JavaScript
+	  ================================================== -->
+	  <!-- Placed at the end of the document so the pages load faster -->
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+	  <script src="../../dist/js/bootstrap.min.js"></script>
+	  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	  <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </div>
+	  <div th:fragment="body-bottom-scripts">
+		  <!--/.container-fluid 	<script th:src="@{/js/jquery.min.js}"></script>
+		  <script th:src="@{/js/bootstrap.min.js}"></script>
+  -->
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>  
+		  <script th:src="@{/js/scripts.js}"></script>
+		  <!-- data table -->
+		  <script th:src="@{/js/jquery.dataTables.min.js}"></script>
+		  <script th:src="@{/js/dataTables.bootstrap.min.js}"></script>
+		  
+	  </div>
+
+   
+</body>
+</html>

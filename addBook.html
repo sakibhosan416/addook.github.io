@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Le's Bookstore</title>
+
+	<!--favicon-->
+    <link rel="shortcut icon" href="image/favecon.png" />	
+        
+    <!--font-awesome css-->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    
+    <!--main css-->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/animate.css" rel="stylesheet" type="text/css" />	
+    <link href="css/responsive.css" rel="stylesheet" type="text/css" />	
+     <!-- Font awesome -->
+	<script src="https://kit.fontawesome.com/6ff322857f.js" crossorigin="anonymous"></script>
+
+    <!-- data table -->
+	<link th:href="@{/css/jquery.dataTables.min.css}" rel="stylesheet" />
+	<link th:href="@{/css/dataTables.bootstrap.min.css}" rel="stylesheet" />
+	<script src="https://js.stripe.com/v2/"></script>
+	<script src="https://js.stripe.com/v3/"></script>
+	<link th:href="@{css/font-awesome.min.css}" rel="stylesheet" />
+      
+    <!--google font-->
+  	<link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+
+
+    <!--responsiv menu-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui, user-scalable=no">
+    <link href="stylesheets/reset.css" rel="stylesheet" type="text/css">
+    <link href="stylesheets/ma5-mobile-menu.css" rel="stylesheet" type="text/css">
+    <link href="stylesheets/site.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+
+<!-- *******navbar-part-start****** -->
+<section id="menu">
+	<nav class="navbar navbar-inverse">
+	  <div class="container">
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="#"><img src="image/logo3.png"></a>
+		    </div>
+		    <div class="collapse navbar-collapse" id="myNavbar">
+		      <ul class="nav navbar-nav">
+		        <li class="active"><a href="#">Voir les annonces</a></li>
+		        <li><a href="#">Passer une annonce</a></li>
+		        <li><a href="#">Mon compte</a></li>
+		        <li><a href="#">Connexion</a></li>
+		        <li><a href="#">Déconnexion</a></li>
+		      </ul>
+		    </div>
+	  </div><!-- end container -->
+	</nav>
+</section>	
+<!-- *******navbar-part-end****** -->
+
+
+<!-- *******information-part-start****** -->
+<section id="information">
+	<div class="container">
+		<div class="information">
+			<h1>Nouvelles informations<br> <span>Champs obligatoires</span></h1>
+			<div class="row">
+				<form class="form-horizontal" th:action="@{/book/add}" method="post"
+							enctype="multipart/form-data">
+					<div class="col-md-6">
+					<div class="from">
+							<div class="input-box">
+								<h6>Port ou aéroport de d'arrivée</h6>
+								<span class="from-icon"><i class="fas fa-plane-arrival"></i></span>
+								<input type="text" name="title" class="form-control" id="title"
+									th:value="${book.title}"  placeholder="Port ou aéroport d'arrivée" />
+							</div><!-- input-box -->	
+
+							<div class="input-box">
+								<h6>Port ou aéroport de départ</h6>
+								<span class="from-icon"><i class="fas fa-plane-departure"></i></span>
+								<input type="text" name="arrivalPortAirport" class="form-control" id="arrivalPortAirport"
+									th:value="${book.arrivalPortAirport}"  placeholder="Port ou aéroport d'arrivée" />
+							</div><!-- input-box -->
+
+							<div class="input-box">
+								<h6>*Pays d'arrivée</h6>
+								<span class="from-icon"><i class="fas fa-globe-americas"></i></span>
+								<select th:value="${book.category}" id="category" name="category"
+									class="form-control" required="required">
+										<option value="" selected="selected" disabled="disabled">Sélectionnez le pays d'arrivée...</option>
+										<option value="Algerie"
+										th:selected="(${book.category}=='Algerie')">Algérie</option>
+										<option value="Allemagne" th:selected="(${book.category}=='Allemagne')">Allemagne</option>
+										<option value="Angleterre" th:selected="(${book.category}=='Angleterre')">Angleterre</option>
+										<option value="Bangladesh" th:selected="(${book.category}=='Bangladesh')">Bangladesh</option>
+									<option value="Belgique"
+										th:selected="(${book.category}=='Belgique')">Belgique</option>
+										<option value="Benin" th:selected="(${book.category}=='Benin')">Bénin</option>
+										
+									<option value="Burkina"
+										th:selected="(${book.category}=='Burkina')">Burkina-Faso</option>
+										
+									<option value="Cambodge" th:selected="(${book.category}=='Cambodge')">Cambodge</option>
+									<option value="Cameroun" th:selected="(${book.category}=='Cameroun')">Cameroun</option>
+									<option value="Canada" th:selected="(${book.category}=='Canada')">Canada</option>
+									<option value="Centrafrique"
+										th:selected="(${book.category}=='Centrafrique')">Centrafrique</option>
+									<option value="Chine" th:selected="(${book.category}=='Chine')">Chine</option>
+									<option value="Comores" th:selected="(${book.category}=='Comores')">Comores</option>
+									<option value="Congo" th:selected="(${book.category}=='Congo')">Congo</option>
+									<option value="Coteivoire"
+										th:selected="(${book.category}=='Coteivoire')">Côte	d'Ivoire</option>
+										
+										
+										<option value="Egypte"
+										th:selected="(${book.category}=='Egypte')">Egypte</option>
+										
+									<option value="Ethiopie"
+										th:selected="(${book.category}=='Ethiopie')">Ethiopie</option>
+									<option value="Gabon" th:selected="(${book.category}=='Gabon')">Gabon</option>
+									<option value="France" th:selected="(${book.category}=='France')">France</option>
+									<option value="Gambie" th:selected="(${book.category}=='Gambie')">Gambie</option>
+									<option value="Ghana" th:selected="(${book.category}=='Ghana')">Ghana</option>
+									<option value="Guadeloupe"
+										th:selected="(${book.category}=='Guadeloupe')">Guadeloupe</option>
+									<option value="Guyane" th:selected="(${book.category}=='Guyane')">Guyane</option>
+									<option value="Guinee" th:selected="(${book.category}=='Guinee')">Guinée</option>
+									<option value="Haiti" th:selected="(${book.category}=='Haiti')">Haiti</option>
+									<option value="Hollande" th:selected="(${book.category}=='Hollande')">Hollande</option>
+									<option value="Inde" th:selected="(${book.category}=='Inde')">Inde</option>
+									
+									<option value="Israel" th:selected="(${book.category}=='Israel')">Israel</option>
+									<option value="Italie" th:selected="(${book.category}=='Italie')">Italie</option>
+									<option value="Laos" th:selected="(${book.category}=='Laos')">Laos</option>
+										<option value="Liban" th:selected="(${book.category}=='Liban')">Liban</option>
+									<option value="Madagascar" th:selected="(${book.category}=='Madagascar')">Madagascar</option>
+									<option value="Malaisie" th:selected="(${book.category}=='Malaisie')">Malaisie</option>
+									<option value="Mali" th:selected="(${book.category}=='Mali')">Mali</option>
+									<option value="Martinique"
+										th:selected="(${book.category}=='Martinique')">Martinique</option>
+										<option value="Mauritanie"
+										th:selected="(${book.category}=='Mauritanie')">Mauritanie</option>
+										
+										<option value="Maroc"
+										th:selected="(${book.category}=='Maroc')">Maroc</option>
+										
+										
+									<option value="Mayotte"
+										th:selected="(${book.category}=='Mayotte')">Mayotte</option>
+									<option value="Niger" th:selected="(${book.category}=='Niger')">Niger</option>
+									<option value="Nigeria"
+										th:selected="(${book.category}=='Nigeria')">Nigéria</option>
+									<option value="RDC" th:selected="(${book.category}=='RDC')">République Démocratique du Congo</option>
+									<option value="Rwanda" th:selected="(${book.category}=='Rwanda')">Rwanda</option>
+									<option value="Senegal"
+										th:selected="(${book.category}=='Senegal')">Sénégal</option>
+									<option value="Soudan" th:selected="(${book.category}=='Soudan')">Soudan</option>
+									<option value="Suisse" th:selected="(${book.category}=='Suisse')">Suisse</option>
+									
+									<option value="Srilanka" th:selected="(${book.category}=='Srilanka')">Sri Lanka</option>
+									<option value="Tanzanie" th:selected="(${book.category}=='Tanzanie')">Tanzanie</option>
+									<option value="Tchad" th:selected="(${book.category}=='Tchad')">Tchad</option>
+									<option value="Thailande" th:selected="(${book.category}=='Thailande')">Thailande</option>
+									<option value="Togo" th:selected="(${book.category}=='Togo')">Togo</option>
+									<option value="Tunisie"
+										th:selected="(${book.category}=='Tunisie')">Tunisie</option>
+										
+										<option value="Turquie"
+										th:selected="(${book.category}=='Turquie')">Turquie</option>
+										
+										<option value="Pakistan"
+										th:selected="(${book.category}=='Pakistan')">Pakistan</option>
+										<option value="Vietnam"
+										th:selected="(${book.category}=='Vietnam')">Viêt Nam</option>
+								</select>
+							</div><!-- input-box -->
+
+							<div class="input-box">
+								<h6>* Nom et prénom</h6>
+								<span class="from-icon"><i class="fas fa-user" aria-hidden="true"></i></span>
+								<input type="text" name="author" class="form-control" id="author"
+								th:value="${book.author}" required="required"
+								placeholder="Nom et Prénom" />
+							</div><!-- input-box -->	
+
+							<div class="input-box">
+								<h6>* Téléphone</h6>
+								<span class="from-icon"><i class="fas fa-phone-alt"></i></span>
+								<input type="text" name="publisher" class="form-control"
+								id="publisher" th:value="${book.publisher}" required="required"
+								placeholder="Téléphone" />
+							</div><!-- input-box -->	
+
+							<div class="input-box">
+								<h6>* Date de départ</h6>
+								<span class="from-icon"><i class="far fa-calendar-alt"></i></span>
+								<input type="date" class="form-control" id="publicationDate"
+								name="publicationDate" th:value="${book.publicationDate}"
+								placeholder="Date de départ" required="required" /> 
+							</div><!-- input-box -->
+
+							<div class="input-box">
+								<h6>* Date d'arrivée estimée</h6>
+								<span class="from-icon"><i class="far fa-calendar-alt"></i></span>
+								<input type="date" class="form-control" id="estimateArrivalDate"
+								name="estimateArrivalDate" th:value="${book.estimateArrivalDate}"
+								placeholder="Date d'arrivée" required="required" />
+							</div><!-- input-box -->							
+						
+					</div><!-- end form -->	
+					</div><!-- end col-md-6 -->
+					
+					<div class="col-md-6">
+					<div class="from">
+						<div class="input-box">
+								<h6>Format accepté</h6>
+								<span class="from-icon"><i class="fas fa-check-circle"></i></span>
+								<select th:value="${book.format}" id="format" name="format"
+								class="form-control">
+								<option value="" selected="selected" disabled="disabled">Sélectionnez le format que vous pouvez accepter...</option>
+								<option value="Taille S : Peut tenir dans une boite à chaussure (Courrier, téléphone...)">Taille S : Peut tenir dans une boite à chaussure (Courrier, téléphone...) </option>
+								<option value="Taille M : Peux tenir dans un bagage à main (Ordinateur, livre, dossier...) ">Taille M : Peux tenir dans un bagage à main (Ordinateur, livre, dossier...) </option>
+								<option value="Taille L : Peux tenir dans un coffre de voiture (Chaise, Télévision...)">Taille L : Peux tenir dans un coffre de voiture (Chaise, Télévision...) </option>
+								<option value="Taille XL :Tous grands objets (Meubles, table, voiture, pneu...)">Taille XL :Tous grands objets (Meubles, table, voiture, pneu...) </option>
+							</select>
+							</div><!-- input-box -->
+
+							<div class="input-box">
+								<h6>* Votre email</h6>
+								<span class="from-icon"><i class="fas fa-envelope"></i></span>
+								<input type="text" name="mode" class="form-control" id="mode"
+								th:value="${book.mode}" placeholder="email@example.com" /> <span
+								class="help-block"></span>
+							</div><!-- input-box -->	
+
+							<div class="input-box">
+								<h6>Poids maximum</h6>
+								<span class="from-icon"><i class="fas fa-balance-scale-right"></i></span>
+								<input th:value="${book.shippingWeight}" type="number"  min="0"
+									name="shippingWeight" class="form-control" id="shippingWeight"
+									placeholder="Poids maximum (kg)" />
+									
+							</div><!-- input-box -->	
+
+							<div class="input-box">
+								<h6>* Votre prix</h6>
+								<span class="from-icon"><i class="fas fa-euro-sign"></i></span>
+								<input
+									th:value="${book.ourPrice}" type="number"  min="0" name="ourPrice" 
+									class="form-control" id="ourPrice" placeholder="Our Price (€)"  required="required"/>
+							</div><!-- input-box -->
+
+							<div class="input-box">
+								<h6>Votre IBAN</h6>
+								<span class="from-icon"><i class="far fa-chart-bar"></i></span>
+								<input type="text" name="language" class="form-control" id="language" th:value="${book.language}"  
+								placeholder="Ceci nous permettra de vous payer par virement si vous le souhaitez."	/>
+							</div><!-- input-box -->
+
+							<div class="input-box2">
+								<h6>Annonce</h6>
+										<span class="icon"><i class="fas fa-edit"></i></span>
+										<textarea name="description" rows="5" class="form-control"
+									id="description" th:value="${book.description}"
+									placeholder="Descrivez vos conditions pour le transport" required="required" ></textarea>
+						</div>
+						<div class="book-button">
+							<h6>Votre pièce d'identité</h6>
+							<input id="bookImage" type="file" name="bookImage"
+											th:value="${book.bookImage}" />
+											
+							<button type="submit" class="btn btn-success">Ajouter</button>
+							<a class="btn btn-danger" th:href="@{/}">Annuler</a>
+						</div>
+
+					</div><!-- end form -->	
+					</div><!-- end col-md-6 -->	
+				</form>					
+			</div><!-- end row -->
+
+		</div><!-- end information -->
+	</div>
+</section>
+<!-- *******information-part-end****** -->
+
+
+
+
+<!-- *******footer-part-end****** -->
+<section id="footer">
+	<div class="container">
+		<div class="footer">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="footer-left">
+						<a href=""><img src="image/logo3.png"></a>
+						<a href="https://github.com/twbs/bootstrap" target="_blank">Conditions Générales d'Utilisation (CGU)</a>
+						<a href="https://twitter.com/getbootstrap" target="_blank">Foire Aux Questions (FAQ)</a>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="footer-center">
+						<li><a href="tel:+880248956492"><i class="fas fa-phone-alt"></i>+88 02 48956492</a></li>
+						<li><a href="#"><i class="fas fa-envelope"></i>E-mail : hello@coshipping.fr</a></li>
+						<a href="https://twitter.com/mdo" target="_blank"><i class="fab fa-twitter-square"></i></a>
+						<a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="footer-right">
+						<p>coshipping est le N° 1 de la plateforme collaborative de livraison de colis par particuliers par voie maritime. Nous sommes présents sur facebook 	 <a href="https://twitter.com/mdo" rel="noopener" target="_blank">@mdo</a> et sur twitter <a href="https://twitter.com/fat" rel="noopener" target="_blank">@fat</a>. Maintained by the <a href="https://github.com/orgs/twbs/people">core team</a> with the help of <a href="https://github.com/twbs/bootstrap/graphs/contributors">our contributors</a>.</p>
+					</div>
+				</div>
+			</div><!-- end row -->
+			<div class="footer-bootom">
+				<p>© 2020 - Tous droits réservés</p>
+				<p><a href="https://www.fiverr.com/sakibhosan?up_rollout=true" target="_blank"><i class="fa fa-code pad" aria-hidden="true"></i>Made with by <span>"Sakib Hosan"</span></a></p>
+			</div>
+		</div>
+	</div><!-- end container -->
+</section>
+<!-- *******footer-part-end****** -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--bootstrap-->
+    <script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="js/script.js"></script>
+    <!-- mixitup pluging -->
+	<script src="js/mixitup.min.js"></script>
+    <script type="text/javascript">
+    	var mixer = mixitup('.gallery');
+
+    </script>
+
+
+     <!-- Bootstrap core JavaScript
+	  ================================================== -->
+	  <!-- Placed at the end of the document so the pages load faster -->
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+	  <script src="../../dist/js/bootstrap.min.js"></script>
+	  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	  <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </div>
+	  <div th:fragment="body-bottom-scripts">
+		  <!--/.container-fluid 	<script th:src="@{/js/jquery.min.js}"></script>
+		  <script th:src="@{/js/bootstrap.min.js}"></script>
+  -->
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>  
+		  <script th:src="@{/js/scripts.js}"></script>
+		  <!-- data table -->
+		  <script th:src="@{/js/jquery.dataTables.min.js}"></script>
+		  <script th:src="@{/js/dataTables.bootstrap.min.js}"></script>
+		  
+	  </div>
+
+   
+</body>
+</html>
